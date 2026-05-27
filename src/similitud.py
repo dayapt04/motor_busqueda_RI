@@ -1,10 +1,4 @@
 # src/similitud.py
-# Persona 3 — Modelos de similitud: Jaccard y Coseno con TF-IDF
-#
-# Depende de:
-#   - data/processed/indice_invertido.pkl  (Persona 2)
-#   - src/indexar.py → ProcesadorNLP      (Persona 2)
-#   - src/preprocessing.py → limpiar_texto (Persona 1)
 
 import pickle
 import math
