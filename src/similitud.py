@@ -23,7 +23,7 @@ RUTA_INDICE_DEFAULT = BASE_DIR / "data" / "processed" / "indice_invertido.pkl"
 class Buscador:
     """
     Carga el índice invertido y expone el preprocesamiento
-    de consultas usando el mismo pipeline que Persona 1 y 2.
+    de consultas usando el mismo pipeline
     """
 
     def __init__(self, ruta_indice=None):
@@ -44,7 +44,7 @@ class Buscador:
 
     def _preprocesar_consulta(self, consulta: str) -> list:
         """
-        Aplica limpiar_texto (Persona 1) + tokenizar con stopwords y stemming (Persona 2).
+        Aplica limpiar_texto + tokenizar con stopwords y stemming.
         Garantiza que los tokens de la consulta sean comparables con los del índice.
         """
         texto_limpio = limpiar_texto(consulta)
@@ -167,7 +167,7 @@ class BuscadorCoseno(Buscador):
 
     def _precompute_doc_norms(self) -> dict:
         """
-        Calcula ||d⃗||  para cada documento una sola vez al arrancar.
+        Calcula ||d||  para cada documento una sola vez al arrancar.
         Recorre las ~3.1 M entradas del índice: tarda unos segundos
         pero elimina ese costo en cada consulta posterior.
         """
